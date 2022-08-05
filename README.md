@@ -35,6 +35,10 @@ Its a Complete Series of Firebase-Flutter Connection Step By Step
 <img src="https://user-images.githubusercontent.com/38869235/182864135-28c11f5c-367c-42cc-9fcc-fb816c69234b.png" width="500" height="200">
 <li><h3>2. Put in the project ‘s app→source folder. </h3></li>
 <img src="https://user-images.githubusercontent.com/38869235/182909756-102225f1-0195-466b-bc39-3d71308d1a14.png" width="500" height="200">
+<li><h3>3. Also  in the project ‘s app folder. </h3></li>
+<img src="https://user-images.githubusercontent.com/38869235/183123501-4497ff56-f2a9-48ec-9328-52503aab2bdf.png" width="500" height="200">
+<li><h3>4. Also  in the project ‘s app→src→debug folder. </h3></li>
+<img src="https://user-images.githubusercontent.com/38869235/183128028-4be5d1b8-c130-4be0-84ff-757745189e38.png" width="500" height="200">
 </ul>
 
 <h1>4. Adding Firebase SDK </h1>
