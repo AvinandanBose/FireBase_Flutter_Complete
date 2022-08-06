@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
+  static const String id = 'Register_Screen';
   const Register({Key? key}) : super(key: key);
 
   @override
@@ -60,10 +61,7 @@ class _RegisterState extends State<Register> {
               final user = _auth.createUserWithEmailAndPassword(
                   email: email!, password: password!);
               if (user != null) {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => LogIn()),
-                );
+                Navigator.pushNamed(context, LogIn.id);
               }
             },
             child: Text('SUBMIT'),

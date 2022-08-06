@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'Next.dart';
 
 class LogIn extends StatefulWidget {
+  static const String id = 'login_screen';
   const LogIn({Key? key}) : super(key: key);
 
   @override
@@ -59,9 +60,7 @@ class _LogInState extends State<LogIn> {
           RaisedButton(onPressed: (){
             final user = _auth.signInWithEmailAndPassword(email: email!, password: password!);
             if(user!=null){
-             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>
-              NextPage()
-              ));
+             Navigator.pushNamed(context, NextPage.id);
             }
           },child: Text(
               'LOG IN'

@@ -22,12 +22,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute:'register' ,
+      initialRoute:Register.id,
       routes: {
-        'register' : (context)=> const Register(),
-        'login' : (context)=>const LogIn(),
-        'Next' : (context) => const NextPage(),
-
+        Register.id : (context)=> const Register(),
+        LogIn.id : (context)=>const LogIn(),
+        NextPage.id : (context) => const NextPage(),
       },
     );
   }

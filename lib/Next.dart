@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 class NextPage extends StatefulWidget {
+  static const String id = 'Next_screen';
   const NextPage({Key? key}) : super(key: key);
 
   @override
