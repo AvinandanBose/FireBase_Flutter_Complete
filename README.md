@@ -7,4 +7,5 @@ Its a Complete Series of Firebase-Flutter Connection Step By Step
 <li><h3> <a href = "https://github.com/AvinandanBose/FireBase_Flutter_Complete/tree/Setting_Up_Authentication"> 3.  Setting Up Authentication  </a><h3></li>
 <li><h3> <a href = "https://github.com/AvinandanBose/FireBase_Flutter_Complete/tree/master"> 4.  Simple SignIn through Flutter using TextField  Widget</a><h3></li>
 <li><h3> <a href = "https://github.com/AvinandanBose/FireBase_Flutter_Complete/tree/master2"> 5.  Simple PageRouting through Navigator.push and MaterialPageRoute  using TextField  Widget</a><h3></li>
+<li><h3> <a href = "https://github.com/AvinandanBose/FireBase_Flutter_Complete/tree/master2"> 5.  Simple PageRouting through Navigator.pushReplacement and MaterialPageRoute  using TextField  Widget</a><h3></li>
 </ul>
