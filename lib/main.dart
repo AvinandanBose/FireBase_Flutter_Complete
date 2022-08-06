@@ -2,6 +2,9 @@ import 'package:firebase_app/register.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
+import 'Login.dart';
+import 'Next.dart';
+
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -19,7 +22,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Register(),
+      initialRoute:'register' ,
+      routes: {
+        'register' : (context)=> const Register(),
+        'login' : (context)=>const LogIn(),
+        'Next' : (context) => const NextPage(),
+
+      },
     );
   }
 }
