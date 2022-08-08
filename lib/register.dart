@@ -1,6 +1,7 @@
 import 'package:firebase_app/Login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Register extends StatefulWidget {
   static const String id = 'Register_Screen';
@@ -12,8 +13,16 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  static const String sharedPrefferenceUserRegKey = "ISLOGGEDIN";
   String? email;
   String? password;
+  GlobalKey<FormState> RegisterKey = GlobalKey<FormState>();
+
+  Future<dynamic> saveUserRegisterSharedPreference(bool isUserLoggedIn)async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return await prefs.setBool(sharedPrefferenceUserRegKey, isUserLoggedIn);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,51 +31,57 @@ class _RegisterState extends State<Register> {
         title: const Text('Register Page'),
         centerTitle: true,
       ),
-      body: Column(
-        children: <Widget>[
-          const SizedBox(
-            height: 24.0,
-          ),
-          TextField(
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(32.0)),
-              ),
+      body:Form(
+        key: RegisterKey,
+        child: Column(
+          children: <Widget>[
+            const SizedBox(
+              height: 24.0,
             ),
-            textAlign: TextAlign.center,
-            onChanged: (value) {
-              email = value;
-            },
-          ),
-          const SizedBox(
-            height: 24.0,
-          ),
-          TextField(
-            obscureText: true,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(32.0)),
+            TextField(
+              decoration: const InputDecoration(
+                hintText: "Please Enter Your Email",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                ),
               ),
+              textAlign: TextAlign.center,
+              onChanged: (value) {
+                email = value;
+              },
             ),
-            textAlign: TextAlign.center,
-            onChanged: (value) {
-              password = value;
-            },
-          ),
-          const SizedBox(
-            height: 24.0,
-          ),
-          RaisedButton(
-            onPressed: () {
-              final user = _auth.createUserWithEmailAndPassword(
-                  email: email!, password: password!);
-              if (user != null) {
-                Navigator.pushNamed(context, LogIn.id);
-              }
-            },
-            child: Text('SUBMIT'),
-          ),
-        ],
+            const SizedBox(
+              height: 24.0,
+            ),
+            TextField(
+              obscureText: true,
+              decoration: const InputDecoration(
+                hintText: "Please Enter Your Password",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                ),
+              ),
+              textAlign: TextAlign.center,
+              onChanged: (value) {
+                password = value;
+              },
+            ),
+            const SizedBox(
+              height: 24.0,
+            ),
+            RaisedButton(
+              onPressed: () {
+                final user = _auth.createUserWithEmailAndPassword(
+                    email: email!, password: password!);
+                if (user != null) {
+                  saveUserRegisterSharedPreference(true);
+                  Navigator.pushNamed(context, LogIn.id);
+                }
+              },
+              child: Text('SUBMIT'),
+            ),
+          ],
+        ),
       ),
     );
   }
