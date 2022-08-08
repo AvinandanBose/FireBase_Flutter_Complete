@@ -1,16 +1,6 @@
-# firebase_app
+# Form Key
 
-A new Flutter project.
+<h3> Form Key helps keeping Track of the form and is not going to reset everytime because the key will be responsible for maintaining the state </h3>
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Form Widget
+<h3> Form Widget basically used for validation , it fields , keys etc.  </h3>
