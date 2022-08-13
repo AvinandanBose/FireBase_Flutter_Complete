@@ -21,6 +21,7 @@ class _LogInState extends State<LogIn> {
 
   Future<dynamic> saveUserLoggedInSharedPreference(bool isUserLoggedIn)async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
+    SharedPreferences.setMockInitialValues({sharedPrefferenceUserLoggedInKey: isUserLoggedIn});
     return await prefs.setBool(sharedPrefferenceUserLoggedInKey, isUserLoggedIn);
   }
 

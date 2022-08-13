@@ -15,6 +15,6 @@ Future<dynamic> funct_name (bool  value)async{
 `````
 That is it first takes a bool value as parameter and then it calls the inbuild function getInstance() which takes key:String , value:Object as a Map. 
 
-prefs → Object , calling setBool() inbuild function in Shared Preference key which takes MAP values (key:sharedPrefferenceKey(String) and value:Value (Boolean) ).
+prefs → Object of SharedPreferences class, calling setBool() inbuild function in Shared Preference key which takes MAP values (key:sharedPrefferenceKey(String) and value:Value (Boolean) ).
 
 And it is necessary to get instance ( getInstance()) of shared preference , when it is used.

@@ -18,9 +18,10 @@ class _RegisterState extends State<Register> {
   String? password;
   GlobalKey<FormState> RegisterKey = GlobalKey<FormState>();
 
-  Future<dynamic> saveUserRegisterSharedPreference(bool isUserLoggedIn)async{
+  Future<dynamic> saveUserRegisterSharedPreference(bool RegisterUser)async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    return await prefs.setBool(sharedPrefferenceUserRegKey, isUserLoggedIn);
+    SharedPreferences.setMockInitialValues({sharedPrefferenceUserRegKey: RegisterUser});
+    return await prefs.setBool(sharedPrefferenceUserRegKey, RegisterUser);
   }
 
   @override
