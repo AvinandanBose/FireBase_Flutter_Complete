@@ -1,16 +1,20 @@
-# firebase_app
+# Shared Preferences
 
-A new Flutter project.
+It takes Map <key , value> pair , and process the data asynchronously . It basically storeand retrieve small amounts of primitive data as key/value pairs to a file on the device storage such as String, int, float, Boolean.
 
-## Getting Started
+Here we have used :
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+```Syntax: 
+String sharedPrefferenceKey = "ISLOGGEDIN";
+ 
+Future<dynamic> funct_name (bool  value)async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return await prefs.setBool(sharedPrefferenceKey, value);
+  }
+`````
+That is it first takes a bool value as parameter and then it calls the inbuild function getInstance() which takes key:String , value:Object as a Map. 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+prefs → Object , calling setBool() inbuild function in Shared Preference key which takes MAP values (key:sharedPrefferenceKey(String) and value:Value (Boolean) ).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+And it is necessary to get instance ( getInstance()) of shared preference , when it is used.
