@@ -1,6 +1,6 @@
 # Shared Preferences
 
-It takes Map <key , value> pair , and process the data asynchronously . It basically storeand retrieve small amounts of primitive data as key/value pairs to a file on the device storage such as String, int, float, Boolean.
+It takes Map <key , value> pair , and process the data asynchronously . It basically store and retrieve small amounts of primitive data as key/value pairs to a file on the device storage such as String, int, float, Boolean.
 
 Here we have used :
 
